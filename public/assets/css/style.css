@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background: var(--main-color);
+}
+:root{
+    --main-color: #FFE6E6;
+    --light: #F0FBFC;
+    --dark: #181d38;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    width: 100%;
+    padding: 13px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1111;
+    transition: .5s ease-in-out;
+}
+
+header .logo a{
+    font-size: 28px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000000;
+    font-family: 'Fenix', serif;
+}
+header .logo img{
+    width: 60px;
+    margin-top: -5px;
+}
+header ul{
+    display: flex;
+    margin: 0;
+}
+header ul li{
+    margin: 0px 20px;
+}
+header ul li a{
+    color: #000000;
+    text-decoration: none!important;
+    text-transform: capitalize;
+    display: block;
+    transition: .4s;
+    font-size: 15px;
+}
+header ul li a:hover{
+    color: #94bcbf;
+}
+
+header .bars{
+    display: none;
+}
+header .bars img{
+    width: 30px;
+    cursor: pointer;
+}
+
+header.active{
+    background: #FFE6E6;
+    box-shadow: 0px 1px 0px #1e7e8c;
+}
+header.active .logo a{
+    color: #000000;
+}
+header.active ul li a{
+    color: #000000;
+    border-color: #e6cdba;
+}
+header.active #bar{
+    background: #94bcbf;
+    color: #efe3d9;
+    padding: 4px 5px;
+    width: 33px;
+}
+.gold-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.gold-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust this value to control the distance of the underline from the text */
+    width: 100%;
+    height: 2px; /* Adjust this value to control the thickness of the underline */
+    background-color: #1e7e8c;
+}
+@media(max-width: 991px){
+    header .navigation{
+        display: block;
+        height: 100vh;
+        width: 50%;
+        background: rgba(228, 208, 185, 0.479);
+        position: absolute;
+        top: 68px;
+        right: -50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+    }
+    header.active .navigation{
+        background: #FFF;
+        box-shadow: -1px 0px 0px #DDD;
+    }
+    header .navigation li{
+        margin: 15px 0px;
+    }
+    header .bars{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    header{
+        padding: 13px 30px;
+    }
+    header .navigation.new{
+        width: 100%;
+        right: -100%;
+    }
+}
+
+.contact-map
+		{
+			width: 100%;
+			height: auto;
+			flex: 50%;
+		}
+		.contact-map iframe
+		{
+			width: 100%;
+			height: 100%;
+		}
+
+.bg-link{
+    margin-top: 16px;
+}
+.bg-link a{
+    display: inline-block;
+    color: #1e7e8c;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #1e7e8c;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.big-bg {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Adjust this value to control the height of the slider */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('your-background-image.jpg') no-repeat center center;
+    background-size: contain;
+    padding-top: 72px; /* Adjust the top padding to create space from the header */
+}
+
+.bg-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.bg-content .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-content .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.bg-content .swiper-slide h1 {
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.151);
+    padding: 20px;
+}
+
+.bg-content .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Use 'contain' if you prefer the whole image to be visible */
+}
+
+.bg-content .swiper-pagination {
+    bottom: 20px !important;
+}
+
+.bg-content .swiper-button-next, .swiper-button-prev {
+    color: #fff;
+}
+
+.bg-link a::before{
+    position: absolute;
+    content: "";
+    background: #94bcbf;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: .5s ease-in-out;
+}
+.bg-link a:hover::before{
+    left: 0%;
+}
+.bg-link a:hover{
+    border-color: #1e7e8c;
+}
+.home-share {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px; /* You can adjust the margin as needed */
+    display: flex;
+}
+
+.home-share a {
+    margin-right: 10px; /* Adjust the spacing between social icons if necessary */
+    color: #FFF; /* Set the color of social icons */
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding-right: 10px ;
+}
+@media(max-width: 991px){
+    .big-bg .bg-content h1{
+        font-size: 50px;
+    }
+
+    .big-bg {
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+    .bg-content .swiper-slide h1 {
+        font-size: 1.5rem;
+    }
+
+    .big-bg .bg-content p{
+        font-size: 15px;
+    }
+    .bg-link a{
+        font-size: 15px;
+    }
+
+    .circular-items {
+        flex-direction: row; /* Change to horizontal layout on smaller screens */
+        padding-top: 815px;
+    }
+
+    .left-items,
+    .right-items {
+        flex-direction: column; /* Reset to vertical layout on smaller screens */
+    }
+
+    .item {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 210px !important; /* Limit the maximum width */
+    }
+
+    .icon {
+        position: static;
+        margin-top: 10px;
+    }
+    .centered-image-section{
+        height: 900px;
+    }
+}
+
+@media(max-width: 768px){
+    .big-bg .bg-content h1{
+        font-size: 43px;
+    }
+    .big-bg .bg-content p{
+        font-size: 14px;
+    }
+    .bg-link a{
+        font-size: 14px;
+    }
+    .home-share a {
+        margin-right: 10px;
+        color: #1e7e8c;
+        text-decoration: none;
+        font-size: 1rem;
+        padding-right: 5px ;
+    }
+}
+
+@media(max-width: 576px){
+    .big-bg .bg-content{
+        padding: 0px 15px;
+    }
+    .big-bg .bg-content hr{
+        width: 130px;
+    }
+    .big-bg .bg-content br{
+        display: none;
+    }
+    .big-bg .bg-content h1{
+        font-size: 28px;
+    }
+    .big-bg .bg-content p{
+        font-size: 13px;
+    }
+    .bg-link a{
+        font-size: 13px;
+    }
+
+    .big-bg {
+        height: 40vh; /* Adjust height for very small screens */
+    }
+
+    .bg-content .swiper-slide h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* First Div */
+.first-div {
+    background-color: white;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 4rem;
+    align-items: center;
+    height: 300px;
+  }
+
+
+.first-div .btn {
+    /* Additional styles for the button */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.col img{
+    border: 1px solid #000;
+}
+
+@media(max-width: 1230px){
+    .big-collection .collect-flex{
+        display: flex;
+        justify-content: center;
+    }
+    .first-div {
+        padding: 0px 300px;
+        height: 300px;
+      }
+}
+
+
+@media(max-width: 800px){
+    .big-collection .collect-flex{
+        display: flex;
+        justify-content: center;
+    }
+    .first-div {
+        padding: 0rem 0rem;
+        height: 300px;
+      }
+
+}
+
+
+@media(max-width: 500px){
+    .big-collection .collect-flex{
+        display: flex;
+        justify-content: center;
+    }
+    .first-div {
+        padding: 0rem 0rem;
+        height: 350px;
+      }
+
+}
+
+.bg-team{
+    width: 100%;
+    /* margin: 100px 0px 0px; */
+
+}
+.bg-team .team-title{
+    margin-bottom: 50px;
+    text-align: center;
+    color: #1e7e8c;
+    background: var(--main-color);
+    height: 550px;
+    padding: 100px 0px;
+}
+.team-title section{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.team-title h2{
+    font-weight: 600;
+}
+.team-title hr{
+    margin: 15px auto;
+    width: 110px;
+    background: #FFF;
+}
+.bg-team .team-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -360px;
+    margin-bottom: 100px;
+}
+.team-flex .team-one{
+    width: 32%;
+}
+.team-flex .team-one img{
+    width: 100%;
+}
+.team-flex .team-one h4{
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #0d4548;
+    text-align: center;
+}
+
+@media(max-width: 991px){
+    .team-flex .team-one h4{
+        font-size: 19px;
+    }
+}
+
+@media(max-width: 768){
+    .team-flex .team-one h4{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 576){
+    .team-flex .team-one h4{
+        font-size: 17px;
+    }
+}
+
+/* Custom styles for centering the form */
+.form-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #a1bdbe42;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-image{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-image .image1{
+    width: 16.6%;
+    position: relative;
+}
+.footer-image .image1 img{
+    width: 100%;
+}
+.footer-image .insta{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 0;
+}
+.footer-image .insta img{
+    width: 30px;
+    cursor: pointer;
+}
+.footer-image .image1:hover .insta{
+    opacity: 1;
+}
+.footer-image .image1:hover .insta img{
+    animation: instagram .5s ease-in-out forwards;
+}
+
+/* media query */
+
+@media(max-width: 768px){
+    .footer-image .image1{
+        width: calc(100% / 3);
+    }
+}
+
+
+@media(max-width: 576px){
+    .footer-image .image1{
+        width: calc(100% / 2);
+    }
+}
+
+@media(max-width: 300px){
+    .footer-image .image1{
+        width: 100%;
+    }
+}
+
+.bg-footer{
+    background-color: white;
+    color: #000;
+    width: 100%;
+}
+
+.footer-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer1 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer1 li {
+    margin-bottom: 10px;
+}
+
+.share {
+    margin-top: 20px;
+}
+
+.share a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.bg-footer .footer-flex{
+    margin: 50px 0px 0px 0px;
+}
+.bg-footer .footer-flex .footer1{
+    width: 24%;
+}
+.footer-flex .footer1 h2{
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.footer-flex .footer1 section{
+    font-size: 14px;
+}
+.footer-flex .footer1 li{
+    font-size: 14px;
+}
+.footer-flex .footer1 li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+}
+.footer-flex .footer1 .footer-logo{
+    margin-top: 30px;
+}
+.footer1 .footer-logo img{
+    width: 100%;
+}
+.bg-footer hr{
+    background: #f9f9f9;
+    margin: 15px 0px;
+    height: 1px;
+    width: 100%;
+}
+.copy{
+    margin: 15px 0px;
+    text-align: center;
+}
+.copy section{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.copy span{
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.bg-footer .share a{
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+    /* font-size: 2rem; */
+    color:#FFE6E6;
+    border:.1rem solid #E1AFD194;
+    margin:.3rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bg-footer .share a:hover{
+    background-color: #FFE6E6;
+    color:#ffffff;
+}
+
+/* media query  */
+
+@media(max-width: 768px){
+    .bg-footer .footer-flex .footer1{
+        width: 49%;
+    }
+}
+
+@media(max-width: 576px){
+    .bg-footer .footer-flex .footer1{
+        width: 100%;
+    }
+}
